@@ -1,10 +1,11 @@
 #Persistent
 #SingleInstance Prompt
 mining := 1
+mine := 0
 
 Loop {
 
-If ProcessExist("excavator.exe") {
+If ProcessExist() {
 
 	If(mining == 0) {
 	
@@ -28,7 +29,24 @@ Sleep, 5000
 
 }
 
-ProcessExist(Name){
-	Process,Exist,%Name%
-	return Errorlevel
+ProcessExist(){
+
+	Process,Exist, excavator.exe
+	If (ErrorLevel) {
+
+		MsgBox Excavator Running
+	return True
+
+	}
+
+	Process,Exist, t-rex.exe
+	If (ErrorLevel) {
+
+		MsgBox T-Rex Running
+
+	return True
+
+	}
+
+	return False
 }
