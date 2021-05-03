@@ -8,7 +8,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #SingleInstance Prompt
 global mining := 0
 global mine := 0
-global ProcessesToCheck := ["excavator.exe", "t-rex.exe"] ; add any miners you have to this array
+global ProcessesToCheck := ["excavator.exe", "t-rex.exe", "miner.exe"] ; add any miners you have to this array
 
 Loop {
 
